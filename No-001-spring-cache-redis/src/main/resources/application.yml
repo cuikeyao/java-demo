@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 9001
 
 spring:
   datasource:
@@ -17,6 +17,7 @@ spring:
   cache:
     redis:
       cache-null-values: true #开启缓存空值，防止缓存穿透，如果方法返回Null则想缓存存入null
+      time-to-live: 1h
 
 mybatis-plus:
   configuration:
