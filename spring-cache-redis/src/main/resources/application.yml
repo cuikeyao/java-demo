@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/java_demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: 192.168.56.10
+      port: 6379
+      password: 123456
+      database: 1
+  cache:
+    redis:
+      cache-null-values: true #开启缓存空值，防止缓存穿透，如果方法返回Null则想缓存存入null
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
