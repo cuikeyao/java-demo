@@ -69,7 +69,7 @@ public class BasicController {
             map.putIfAbsent("countRedBag:", countRedBag.get());
             map.putIfAbsent("countMsg:", countMsg.get());
         } catch (ExecutionException | InterruptedException | TimeoutException ex) {
-            ex.printStackTrace();
+            log.error("Exception", ex);
         }
         return map;
     }
