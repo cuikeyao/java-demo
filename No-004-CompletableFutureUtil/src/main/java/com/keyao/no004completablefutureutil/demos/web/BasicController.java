@@ -20,16 +20,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-/**
- * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
- */
 @RestController
 public class BasicController {
     private static final Logger log = LogManager.getLogger(BasicController.class);
@@ -38,9 +33,9 @@ public class BasicController {
 
     @RequestMapping("/get")
     public List get() {
-        User user1 = User.builder().id(1L).name("xiaoming").age(18).build();
-        User user2 = User.builder().id(2L).name("xiaohong").age(20).build();
-        User user3 = User.builder().id(3L).name("xiaohuang").age(22).build();
+        User user1 = User.builder().id(String.valueOf(1L)).name("xiaoming").age(18).build();
+        User user2 = User.builder().id(String.valueOf(2L)).name("xiaohong").age(20).build();
+        User user3 = User.builder().id(String.valueOf(3L)).name("xiaohuang").age(22).build();
 
         CompletableFutureUtil completableFutureUtil = new CompletableFutureUtil();
         List<String> strList = completableFutureUtil.parallelFutureJoin(Arrays.asList(user1, user2, user3), item -> {
