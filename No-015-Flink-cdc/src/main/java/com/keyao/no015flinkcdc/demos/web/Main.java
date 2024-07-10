@@ -55,7 +55,7 @@ public class Main {
         tableEnv.executeSql(sourceDDL);
 
         // 获取 MySQL CDC 源表的 DataStream
-        Table table = tableEnv.sqlQuery("SELECT * FROM products");
+        Table table = tableEnv.sqlQuery("SELECT id,name,description FROM products");
         DataStream<Row> rowDataStream = tableEnv.toChangelogStream(table);
 
         // 数据清洗和处理
@@ -89,12 +89,12 @@ public class Main {
                     map.put("description", products.getDescription());
 
                     if (products.getRowKind() == RowKind.INSERT || products.getRowKind() == RowKind.UPDATE_AFTER) {
-                        IndexRequest indexRequest = Requests.indexRequest("flink-index")
+                        IndexRequest indexRequest = Requests.indexRequest("products")
                                 .id(String.valueOf(products.getId()))
                                 .source(map);
                         indexer.add(indexRequest);
                     } else if (products.getRowKind() == RowKind.DELETE) {
-                        DeleteRequest deleteRequest = Requests.deleteRequest("flink-index")
+                        DeleteRequest deleteRequest = Requests.deleteRequest("products")
                                 .id(String.valueOf(products.getId()));
                         indexer.add(deleteRequest);
                     }
