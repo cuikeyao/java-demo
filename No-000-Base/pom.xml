@@ -5,8 +5,8 @@
     <groupId>com.keyao</groupId>
     <artifactId>No-000-Base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base</name>
-    <description>base</description>
+    <name>No-000-Base</name>
+    <description>No-000-Base</description>
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -33,7 +33,7 @@ public class BasicController {
     @Autowired
     RedissonDelayQueue redissonDelayQueue;
 
-    // http://localhost:9002/send/testMessage
+    // http://192.168.56.10:9002/send/testMessage
     @RequestMapping("/send/{message}")
     public String send(@PathVariable String message) {
         redissonDelayQueue.offerTask(message,5);

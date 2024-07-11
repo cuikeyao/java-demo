@@ -49,7 +49,7 @@ public class BasicController {
     private static ExecutorService executor = new ThreadPoolExecutor(20, 50, 30L, TimeUnit.SECONDS,
             new LinkedBlockingQueue<>(100), Executors.defaultThreadFactory(), new ThreadPoolExecutor.CallerRunsPolicy());
 
-    // http://localhost:9003/get
+    // http://192.168.56.10:9003/get
     @RequestMapping("/get")
     public Map get() {
         Map<String,Long> map = new HashMap<>();

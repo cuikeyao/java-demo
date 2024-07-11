@@ -42,13 +42,13 @@ public class UserController {
 
     @Cacheable(value = "userCache", key = "#id")
     @RequestMapping("/getUser")
-    public User getUser(Integer id) {
+    public User getUser(String id) {
         return userService.getById(id);
     }
 
     @CacheEvict(value = "userCache", allEntries = true)
     @RequestMapping("/deleteUser")
-    public boolean deleteUser(Integer id) {
+    public boolean deleteUser(String id) {
         return userService.removeById(id);
     }
 

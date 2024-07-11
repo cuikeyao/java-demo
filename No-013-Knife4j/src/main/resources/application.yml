@@ -1,7 +1,7 @@
 server:
   port: 9013
 
-# springdoc-openapi项目访问访问地址: http://localhost:9013/doc.html#/home
+# springdoc-openapi项目访问访问地址: http://192.168.56.10:9013/doc.html#/home
 springdoc:
   swagger-ui:
     path: /swagger-ui.html

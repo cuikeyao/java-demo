@@ -5,8 +5,8 @@
     <groupId>com.keyao</groupId>
     <artifactId>No-002-Redission-delay-queue</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>redission-delay-queue</name>
-    <description>基于redis的延迟队列</description>
+    <name>No-002-Redission-delay-queue</name>
+    <description>No-002-Redission-delay-queue</description>
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

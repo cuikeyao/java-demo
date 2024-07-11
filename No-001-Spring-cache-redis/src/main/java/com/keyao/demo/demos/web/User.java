@@ -32,7 +32,7 @@ public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 4583377568965545743L;
 
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
 
     private String name;

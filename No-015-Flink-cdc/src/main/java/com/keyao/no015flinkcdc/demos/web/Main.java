@@ -29,6 +29,9 @@ public class Main {
 
         // 创建 Flink 执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        // 启用检查点，以实现容错处理，确保数据处理的Exactly-Once语义
+        env.enableCheckpointing(60000);
+        // 设置并行度为1
         env.setParallelism(1);
         // 创建 Table 环境
         EnvironmentSettings settings = EnvironmentSettings.newInstance().inStreamingMode().build();
@@ -48,6 +51,7 @@ public class Main {
                  'username' = 'root',
                  'password' = '123456',
                  'database-name' = 'java_demo',
+                 'scan.startup.mode' = 'earliest-offset',
                  'table-name' = 'products'
             )
         """;

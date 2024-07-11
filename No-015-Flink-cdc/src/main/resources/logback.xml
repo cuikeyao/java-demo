@@ -7,7 +7,7 @@
 
     <logger name="org.elasticsearch.client" level="ERROR"/>
     <logger name="org.apache.flink.api.java.typeutils.runtime.kryo" level="ERROR"/>
-    <logger name="org.apache.flink" level="INFO"/>
+    <logger name="org.apache.flink" level="WARN"/>
     <logger name="io.debezium" level="INFO"/>
 
     <root level="INFO">
