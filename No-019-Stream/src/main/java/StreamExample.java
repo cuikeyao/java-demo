@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +13,8 @@ public class StreamExample {
         test5();
         test6();
         test7();
+        test8();
+        test9();
     }
 
     // 转换为另一种集合
@@ -77,6 +80,21 @@ public class StreamExample {
         List<String> collect = list.stream()
                 .distinct()
                 .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
+    // reduce归约
+    public static void test8() {
+        List<Integer> list = List.of(1,2,3,4,5,6,7,8,9,10);
+        Integer reduce = list.stream().reduce(0, (a, b) -> a + b);
+        System.out.println(reduce);
+    }
+
+    // 分组
+    public static void test9() {
+        List<String> list = List.of("abc","fdsf","fsfk","fs","ose");
+        Map<Integer, List<String>> collect = list.stream()
+                .collect(Collectors.groupingBy(String::length));
         System.out.println(collect);
     }
 }
