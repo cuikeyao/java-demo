@@ -37,9 +37,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/**
- * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
- */
 @RestController
 public class BasicController {
     private static final Logger log = LogManager.getLogger(BasicController.class);
